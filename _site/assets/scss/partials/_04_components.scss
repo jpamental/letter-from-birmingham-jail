@@ -17,10 +17,16 @@
   }
 }
 
+.page-title {
+  display: block;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+}
 
 /* Navigation */
 
 .title-link {
+  display: block;
   font-weight: 600;
   @supports (font-variation-settings: normal) {
     font-weight: 625;
