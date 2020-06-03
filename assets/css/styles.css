@@ -620,7 +620,8 @@ h1 {
 
 h1 + p,
 h1 + ul {
-  margin-top: calc( var(--body-text-spacer) * 3); }
+  clear: left;
+  padding-top: calc( var(--body-text-spacer) * 3); }
 
 h2 {
   --text-opsz: var(--h2-opsz-s);
@@ -806,6 +807,8 @@ p {
     text-indent: 0; }
   p.margin-top {
     margin-top: 1em; }
+  p.clear {
+    clear: both; }
 
 aside {
   font-family: "Literata Variable";
@@ -1465,7 +1468,7 @@ blockquote {
     max-width: 60vw; } }
 
 @media screen and (min-width: 42em) {
-  article > h2 {
+  article > h1 + h2 {
     clear: left;
     margin-left: calc( var(--margin-left) / 2);
     margin-right: calc( var(--margin-left) / 2);

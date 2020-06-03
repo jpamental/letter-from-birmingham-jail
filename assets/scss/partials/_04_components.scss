@@ -492,7 +492,7 @@ article {
       max-width: 60vw;
     }
   }
-  > h2 {
+  > h1 + h2 {
     @media screen and (min-width: $bp--medium) {
       clear: left;
       margin-left: calc( var(--margin-left) / 2 );

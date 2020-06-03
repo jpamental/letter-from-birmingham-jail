@@ -130,7 +130,8 @@ h1 {
 
 h1 + p,
 h1 + ul {
-  margin-top: calc( var(--body-text-spacer) * 3 );
+  clear: left;
+  padding-top: calc( var(--body-text-spacer) * 3 );
 }
 
 h2 {
@@ -339,6 +340,10 @@ p {
 
   &.margin-top {
     margin-top: 1em;
+  }
+
+  &.clear {
+    clear: both;
   }
 }
 
