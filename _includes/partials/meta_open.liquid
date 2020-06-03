@@ -20,12 +20,12 @@
     <script type="text/javascript">
   		(function() {
   			document.documentElement.className += " wf-inactive"; 
-  			document.documentElement.className += " swipe"; 
+  			//document.documentElement.className += " swipe"; 
 
         // Check for Swipe UI preference
 				if (document.cookie.split(';').some((item) => item.includes('swipe=on'))) {
 					// set a cookie to save the setting
-					document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
+					//document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
 				} else {
 					document.getElementsByTagName("html")[0].classList.remove('swipe');
 				}
@@ -129,7 +129,7 @@
     <header id="top" class="top-bar">
       <a href="#main_content" class="visually-hidden">Jump to main <span role="presentation">content</span></a>
       <div>
-        <span class="page-title">{{ metadata.title }}</span>
+        <a href="{{ '/' | url }}" class="title-link page-title">{{ metadata.title }}</a>
       </div>
       <div class="link-wrapper">
 				{% comment %}<div class="settings dd-menu">

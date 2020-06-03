@@ -20,12 +20,12 @@
     <script type="text/javascript">
   		(function() {
   			document.documentElement.className += " wf-inactive"; 
-  			document.documentElement.className += " swipe"; 
+  			//document.documentElement.className += " swipe"; 
 
         // Check for Swipe UI preference
 				if (document.cookie.split(';').some((item) => item.includes('swipe=on'))) {
 					// set a cookie to save the setting
-					document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
+					//document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
 				} else {
 					document.getElementsByTagName("html")[0].classList.remove('swipe');
 				}
@@ -129,7 +129,7 @@
     <header id="top" class="top-bar">
       <a href="#main_content" class="visually-hidden">Jump to main <span role="presentation">content</span></a>
       <div>
-        <span class="page-title">Letter from Birmingham Jail</span>
+        <a href="/" class="title-link page-title">Letter from Birmingham Jail</a>
       </div>
       <div class="link-wrapper">
 				
@@ -140,14 +140,12 @@
 
 <article class="chapter">
   
-<article class="contents">
   <h1>About this project</h1>
 
-  <p>I wanted to read this, but couldn't find a site on the web represented it well online (rather than as a downloadable PDF)—so I made this site.</p>
-  <p>Respectfully,</p>
-  <p>Jason Pamental</p>
+  <p>I wanted to read Dr. King’s letter, but couldn't find it represented well online other than as a downloadable PDF. So I made this site.</p>
+  <p class="no-indent margin-top">Respectfully,</p>
+  <p class="no-indent margin-top">Jason Pamental</p>
 
-</article>
 
 
 
