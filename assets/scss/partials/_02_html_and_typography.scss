@@ -79,7 +79,7 @@ h1 {
   line-height: $h1-lh-s;
   line-height: var(--h1-lh-s);
   margin: 2rem 0 0 0;
-  margin-top: calc( var(--body-text-spacer) * 2 );
+  margin-top: calc( var(--body-text-spacer) * 4 );
   max-width: $content-width-s;
   max-width: var(--content-width);
   position: relative;

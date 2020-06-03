@@ -573,7 +573,7 @@ h1 {
   line-height: 1.05;
   line-height: var(--h1-lh-s);
   margin: 2rem 0 0 0;
-  margin-top: calc( var(--body-text-spacer) * 2);
+  margin-top: calc( var(--body-text-spacer) * 4);
   max-width: 88vw;
   max-width: var(--content-width);
   position: relative;
