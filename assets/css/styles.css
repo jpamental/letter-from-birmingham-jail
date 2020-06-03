@@ -83,9 +83,9 @@
   --h3-size-s-value: 1.25;
   --h3-size-m-value: 1.375;
   --h3-size-l-value: 1.5;
-  --bq-size-s-value: 1.25;
-  --bq-size-m-value: 1.375;
-  --bq-size-l-value: 1.5;
+  --bq-size-s-value: 1.5;
+  --bq-size-m-value: 1.625;
+  --bq-size-l-value: 2;
   --p-size-s: 1rem;
   --p-size-m: 1.125rem;
   --p-size-l: 1.25rem;
@@ -98,9 +98,9 @@
   --h3-size-s: 1.25rem;
   --h3-size-m: 1.375rem;
   --h3-size-l: 1.5rem;
-  --bq-size-s: 1.25rem;
-  --bq-size-m: 1.375rem;
-  --bq-size-l: 1.5rem;
+  --bq-size-s: 1.5rem;
+  --bq-size-m: 1.625rem;
+  --bq-size-l: 2rem;
   --p-lh-s: 1.5;
   --p-lh-m: 1.525;
   --p-lh-l: 1.55;
@@ -789,6 +789,8 @@ p {
       line-height: var(--line-height); } }
   p + p {
     text-indent: 2em; }
+  blockquote + p {
+    text-indent: 2em; }
   aside + p {
     margin-top: 1em; }
   p.no-indent {
@@ -1361,9 +1363,11 @@ blockquote {
   * + blockquote {
     margin-top: var(--body-text-spacer); }
   blockquote p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-size: var(--bq-size-s);
-    font-variant-ligatures: common-ligatures discretionary-ligatures; }
+    font-style: italic;
+    font-variant-ligatures: common-ligatures discretionary-ligatures;
+    font-weight: 300; }
     .wf-inactive blockquote p {
       letter-spacing: 0;
       word-spacing: 0.05em; }
@@ -1372,11 +1376,11 @@ blockquote {
         word-spacing: -0.01em; }
     @media screen and (min-width: 42em) {
       blockquote p {
-        font-size: 1.375rem;
+        font-size: 1.625rem;
         font-size: var(--bq-size-m); } }
     @media screen and (min-width: 60em) {
       blockquote p {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-size: var(--bq-size-l); } }
     @supports (font-size: clamp(1rem, 2vw, 3rem)) {
       blockquote p {
@@ -1394,54 +1398,18 @@ blockquote {
       margin-left: -0.5em; }
     blockquote p:after {
       content: '”'; }
-  blockquote.bq--inline p {
-    display: inline;
-    font-size: 1rem;
-    font-size: var(--p-size-s);
-    font-variant-ligatures: common-ligatures; }
-    @media screen and (min-width: 42em) {
-      blockquote.bq--inline p {
-        font-size: 1.125rem;
-        font-size: var(--p-size-m); } }
+  blockquote.right {
+    float: right; }
     @media screen and (min-width: 60em) {
-      blockquote.bq--inline p {
-        font-size: 1.25rem;
-        font-size: var(--p-size-l); } }
-    @supports (font-size: clamp(1rem, 2vw, 3rem)) {
-      blockquote.bq--inline p {
-        /* responsive typography scaling bits */
-        --font-size-min-value: var(--p-size-s-value);
-        --font-size-max-value: var(--p-size-l-value);
-        --font-size-scaler-value: var(--p-scaler-value);
-        font-size: var(--font-size);
-        --font-lh-min-value: var(--p-lh-s);
-        --font-lh-max-value: var(--p-lh-l);
-        --font-lh-scaler-value: var(--p-lh-scaler-value);
-        line-height: var(--line-height); } }
-  blockquote.bq--plaque {
-    padding-left: 5vw;
-    padding-right: 5vw; }
-    blockquote.bq--plaque p {
-      border: solid 1px #333333;
-      border-color: var(--color-text);
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75), 2px 2px 2px rgba(0, 0, 0, 0.75);
-      font-size: 0.9em;
-      text-transform: lowercase;
-      font-variant-caps: small-caps;
-      -webkit-hyphens: none;
-      hyphens: none;
-      line-height: 1.75;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 27em;
-      padding: 1.5rem 1rem;
-      text-align: center; }
-      blockquote.bq--plaque p:before, blockquote.bq--plaque p:after {
-        content: ""; }
-    blockquote.bq--plaque .name {
-      display: block;
-      font-size: 1.25em;
-      font-weight: 450; }
+      blockquote.right {
+        float: right;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 2rem;
+        width: calc(10vw + var(--margin-right)); } }
+    @media screen and (min-width: 75em) {
+      blockquote.right {
+        width: var(--margin-right); } }
   blockquote cite {
     font-size: 1rem;
     font-size: var(--p-size-s);

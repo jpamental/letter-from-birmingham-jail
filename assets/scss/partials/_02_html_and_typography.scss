@@ -313,6 +313,10 @@ p {
     text-indent: 2em;
   }
 
+  blockquote + & {
+    text-indent: 2em;
+  }
+
   aside + & {
     margin-top: 1em;
   }
