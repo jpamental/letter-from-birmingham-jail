@@ -1399,21 +1399,20 @@ blockquote {
         line-height: var(--line-height); } }
     blockquote p:before {
       content: '“';
-      margin-left: -0.5em; }
+      margin-left: -0.55em;
+      margin-right: 0.1em; }
     blockquote p:after {
       content: '”'; }
-  blockquote.right {
-    float: right; }
-    @media screen and (min-width: 60em) {
-      blockquote.right {
-        float: right;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 2rem;
-        width: calc(10vw + var(--margin-right)); } }
-    @media screen and (min-width: 75em) {
-      blockquote.right {
-        width: var(--margin-right); } }
+  @media screen and (min-width: 60em) {
+    blockquote.right {
+      float: right;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 2rem;
+      width: calc(10vw + var(--margin-right)); } }
+  @media screen and (min-width: 75em) {
+    blockquote.right {
+      width: var(--margin-right); } }
   blockquote cite {
     font-size: 1rem;
     font-size: var(--p-size-s);

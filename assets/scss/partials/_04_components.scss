@@ -421,14 +421,14 @@ blockquote {
     }
     &:before {
       content: '“';
-      margin-left: -0.5em;
+      margin-left: -0.55em;
+      margin-right: 0.1em;
     }
     &:after {
       content: '”';
     }
   }
   &.right {
-    float: right;
     @media screen and (min-width: $bp--large) {
       float: right;
       margin-left: 0;
