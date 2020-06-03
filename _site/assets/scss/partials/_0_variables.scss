@@ -121,9 +121,9 @@ $p-size-s-px: 16;
 $p-size-m-px: 18;
 $p-size-l-px: 20;
 
-$h1-size-s-px: 36;
-$h1-size-m-px: 56;
-$h1-size-l-px: 72;
+$h1-size-s-px: 42;
+$h1-size-m-px: 64;
+$h1-size-l-px: 96;
 
 $h2-size-s-px: 24;
 $h2-size-m-px: 30;
@@ -140,7 +140,7 @@ $bq-size-l-px: 32;
 /* Scaling typography bits - set scaling values */
 :root {
   --p-scaler-value: 1;
-  --h1-scaler-value: 4.5;
+  --h1-scaler-value: 6;
   --h2-scaler-value: 3;
   --h3-scaler-value: 2;
   --bq-scaler-value: 2.25;

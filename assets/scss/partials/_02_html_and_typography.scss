@@ -76,6 +76,7 @@ h1 {
   font-variant-ligatures: common-ligatures discretionary-ligatures;
   font-variant-numeric: lining-nums;
   font-weight: 300;
+  letter-spacing: -0.015em;
   line-height: $h1-lh-s;
   line-height: var(--h1-lh-s);
   margin: 2rem 0 0 0;
@@ -186,6 +187,12 @@ h2 {
     --font-lh-max-value: var(--h2-lh-l);
     --font-lh-scaler-value: var(--h2-lh-scaler-value);
     line-height: var(--line-height); 
+  }
+}
+
+h1 + h2 {
+  @media screen and (min-width: $bp--medium) {
+    padding-top: calc( var(--body-text-spacer) * 1 );
   }
 }
 

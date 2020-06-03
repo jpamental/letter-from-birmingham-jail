@@ -486,6 +486,15 @@ blockquote {
 article {
   > h1 {
     @media screen and (min-width: $bp--medium) {
+      float: left;
+      margin-left: calc( var(--margin-left) / 2 );
+      margin-right: auto;
+      max-width: 60vw;
+    }
+  }
+  > h2 {
+    @media screen and (min-width: $bp--medium) {
+      clear: left;
       margin-left: calc( var(--margin-left) / 2 );
       margin-right: calc( var(--margin-left) / 2 );
       max-width: calc( 100vw - var(--margin-left) );
