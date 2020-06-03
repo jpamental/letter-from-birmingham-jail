@@ -326,6 +326,9 @@ aside {
   max-width: var(--content-width);
   margin-left: calc( (100vw - var(--content-width)) / 2 );
   margin-right: calc( (100vw - var(--content-width)) / 2 );
+  h2 + & {
+    margin-top: 1em;
+  }
 }
 
 footer {
