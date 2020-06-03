@@ -1,0 +1,31 @@
+{
+  "name": "letter-from-birmingham-jail",
+  "version": "1.0.0",
+  "description": "Dr. Martin Luther King Jr.'s letter to 8 white church leaders, written from a jail cell in Birmingham, Alabama in 1963.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jpamental@github.com/jpamental/letter-from-birmingham-jail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpamental/letter-from-birmingham-jail/issues"
+  },
+  "homepage": "https://github.com/jpamental/letter-from-birmingham-jail#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "acorn": "^7.1.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^0.2.4"
+  }
+}

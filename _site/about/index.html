@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+    <title>
+      About this project | Letter from Birmingham Jail, by Dr. Martin Luther King, Jr.
+    </title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/vendor/widowadjust-min.js"></script>
+    <script src="/assets/js/vendor/fontfaceobserver.js"></script>
+
+    <script type="text/javascript">
+  		(function() {
+  			document.documentElement.className += " wf-inactive"; 
+  			document.documentElement.className += " swipe"; 
+
+        // Check for Swipe UI preference
+				if (document.cookie.split(';').some((item) => item.includes('swipe=on'))) {
+					// set a cookie to save the setting
+					document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
+				} else {
+					document.getElementsByTagName("html")[0].classList.remove('swipe');
+				}
+
+        // set initial var for support of variable fonts
+        // starting with true since most browsers support them now
+        var vfSupport = true;
+        
+        // Check for browser support of variable fonts
+        var vfSupport = "CSS" in window && "supports" in CSS && CSS.supports("(font-variation-settings: normal)");
+        // should return true if the browser supports variable fonts
+				//console.log('vfSupport: '+vfSupport);
+        
+  			// Optimization for Repeat Views
+  			if( sessionStorage.foutFontsLoaded ) {
+  				document.documentElement.classList.remove("wf-inactive");
+  				document.documentElement.classList.add("wf-active");
+  				return;
+  			}
+        
+        if( vfSupport == true ) { // Check for variable fonts 
+					var fontA = new FontFaceObserver('Literata Variable', {
+						weight: 400,
+						style: 'normal'
+					});
+					var fontB = new FontFaceObserver('Literata Variable', {
+							weight: 400,
+							style: 'italic'
+						});
+			
+					Promise.all([fontA.load(), fontB.load()]).then(function () {
+            document.documentElement.classList.remove("wf-inactive");
+            document.documentElement.classList.add("wf-active");
+          
+    				// Optimization for Repeat Views
+    				sessionStorage.foutFontsLoaded = true;
+  				});
+        } else { // Else check for static web fonts
+					var fontA = new FontFaceObserver('Literata', {
+							weight: 'normal',
+							style: 'normal'
+						});
+					var fontB = new FontFaceObserver('Literata', {
+							weight: 'normal',
+							style: 'italic'
+						});
+          var fontC = new FontFaceObserver('Literata', {
+							weight: 'bold',
+							style: 'normal'
+						});
+					var fontD = new FontFaceObserver('Literata', {
+							weight: 'bold',
+							style: 'italic'
+						});
+					var fontE = new FontFaceObserver('Literata', {
+							weight: '300',
+							style: 'normal'
+						});
+					var fontF = new FontFaceObserver('Literata', {
+							weight: '500',
+							style: 'normal'
+						});
+					var fontG = new FontFaceObserver('Literata', {
+							weight: '600',
+							style: 'normal'
+						});
+					var fontH = new FontFaceObserver('Literata Caption', {
+							weight: 'normal',
+							style: 'normal'
+						});
+					var fontI = new FontFaceObserver('Literata Deck', {
+							weight: '300',
+							style: 'normal'
+						});
+					var fontJ = new FontFaceObserver('Literata Display', {
+							weight: '300',
+							style: 'normal'
+						});
+					var fontK = new FontFaceObserver('Literata Display', {
+							weight: 'normal',
+							style: 'normal'
+						});
+					var fontL = new FontFaceObserver('Literata Display', {
+							weight: '900',
+							style: 'normal'
+						});
+
+					Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load(), fontE.load(), fontF.load(), fontG.load(), fontH.load(), fontI.load(), fontJ.load(), fontK.load(), fontL.load()]).then(function () {
+            document.documentElement.classList.remove("wf-inactive");
+            document.documentElement.classList.add("wf-active");
+          
+    				// Optimization for Repeat Views
+    				sessionStorage.foutFontsLoaded = true;
+    			});
+        }
+  		})();
+  	</script>
+
+  </head>
+  <body class="">
+    <header id="top" class="top-bar">
+      <a href="#main_content" class="visually-hidden">Jump to main <span role="presentation">content</span></a>
+      <div>
+        Letter from Birmingham Jail
+      </div>
+      <div class="link-wrapper">
+				<div class="settings dd-menu">
+					<a href="/settings" class="dd-menu-trigger" id="settings_trigger">Settings</a>
+					<ul class="menu">
+    <li>
+      <a href="#" id="toggle-swipe" class="toggle-swipe off">Swipe UI</a>
+    </li>
+</ul>
+
+				</div>
+			</div>
+    </header>
+    <main id="main_content" class="main-content">
+
+
+<article class="chapter">
+  
+<article class="contents">
+  <h1>About this project</h1>
+
+  <p>I wanted to read this, but couldn't find a site on the web represented it well online (rather than as a downloadable PDF)—so I made this site.</p>
+  <p>Respectfully,</p>
+  <p>Jason Pamental</p>
+
+</article>
+
+
+
+
+</article>
+<div class="pager-wrapper" id="pager_wrapper"></div>
+
+    </main>
+    <footer>
+      <a href="#top">Top</a> | 
+      <a href="/">Home</a> | 
+      <a href="/about">About this project</a> 
+    </footer>
+    <script src="/assets/js/scripts.js" async></script>
+  </body>
+</html>

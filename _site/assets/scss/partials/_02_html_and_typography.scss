@@ -1,0 +1,554 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Scaling typography setup */
+
+* {
+  --font-size-min: calc(var(--font-size-min-value) * 1rem);
+  --font-size-max: calc(var(--font-size-max-value) * 1rem);
+  --font-size-scaler: calc(var(--font-size-scaler-value) * 1vw);
+  --font-size: clamp(var(--font-size-min), calc(0.5rem + var(--font-size-scaler)), var(--font-size-max));
+
+  --font-lh-min: calc(var(--font-lh-min-value) * 1em);
+  --font-lh-max: calc(var(--font-lh-max-value) * 1em);
+  --font-lh-scaler: calc(var(--font-lh-scaler-value) * 1vw);
+  --line-height: clamp(var(--font-lh-min), calc(0.5rem + var(--font-lh-scaler)), var(--font-lh-max)); 
+}
+
+/* Base typography */
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  @media screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+  --text-opsz: var(--p-opsz-s);
+  background-color: var(--color-background);
+  font-family: $fonts-serif-static;
+  font-family: var(--fonts-serif-static);
+  font-size: 1rem;
+  font-variant-numeric: oldstyle-nums;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  @supports (font-variation-settings: normal) {
+    font-family: var(--fonts-serif);
+    font-variation-settings: 'opsz' var(--text-opsz);
+    .wf-inactive & {
+      font-family: var(--fonts-base-serif);
+    }
+  }
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  td {
+    & + td {
+      padding-left: 1rem;
+    }
+  }
+}
+
+h1 {
+  /* force the optical size axis in the variable font for finer details */
+  --text-opsz: var(--h1-opsz-l);
+  color: $color-dark-gray;
+  color: var(--color-text);
+  font-family: $fonts-serif-static-display;
+  font-family: var(--fonts-serif-static-display);
+  font-size: $h1-size-s;
+  font-size: var(--h1-size-s);
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  font-variant-numeric: lining-nums;
+  font-weight: 300;
+  line-height: $h1-lh-s;
+  line-height: var(--h1-lh-s);
+  margin: 2rem 0 0 0;
+  margin-top: calc( var(--body-text-spacer) * 2 );
+  max-width: $content-width-s;
+  max-width: var(--content-width);
+  position: relative;
+  transition: font-size .1s ease; 
+  @supports (font-variation-settings: normal) {
+    font-family: var(--fonts-serif);
+    font-variation-settings: 'opsz' var(--text-opsz);
+    font-weight: 250;
+    .wf-inactive & {
+      font-family: var(--fonts-base-serif-display);
+      font-weight: normal;
+      letter-spacing: 0.015em;
+    }
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--h1-opsz-l);
+    font-size: $h1-size-m;
+    font-size: var(--h1-size-m);
+    line-height: $h1-lh-m;
+    line-height: var(--h1-lh-m);
+    max-width: $content-width-m;
+    max-width: var(--content-width);
+ }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--h1-opsz-l);
+    font-size: $h1-size-l;
+    font-size: var(--h1-size-l);
+    line-height: $h1-lh-l;
+    line-height: var(--h1-lh-l);
+    max-width: $content-width-l;
+    max-width: var(--content-width);
+  }
+  @supports (font-size: clamp(1rem, 2vw, 3rem)) {
+    /* responsive typography scaling bits */
+    --font-size-min-value: var(--h1-size-s-value);
+    --font-size-max-value: var(--h1-size-l-value);
+    --font-size-scaler-value: var(--h1-scaler-value);
+    font-size: var(--font-size);
+
+    --font-lh-min-value: var(--h1-lh-s);
+    --font-lh-max-value: var(--h1-lh-l);
+    --font-lh-scaler-value: var(--h1-lh-scaler-value);
+    line-height: var(--line-height); 
+  }
+}
+
+
+h1 + p,
+h1 + ul {
+  margin-top: calc( var(--body-text-spacer) * 3 );
+}
+
+h2 {
+  --text-opsz: var(--h2-opsz-s);
+  color: $color-dark-gray;
+  color: var(--color-text);
+  font-family: $fonts-serif-static-deck;
+  font-family: var(--fonts-serif-static-deck);
+  font-size: $h2-size-s;
+  font-size: var(--h2-size-s);
+  font-weight: 300;
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  line-height: $h2-lh-s;
+  line-height: var(--h2-lh-s);
+  margin: 2rem 0 0 0;
+  max-width: $content-width-s;
+  max-width: var(--content-width);
+  position: relative;
+  @supports (font-variation-settings: normal) {
+    font-family: var(--fonts-serif);
+    font-variation-settings: 'opsz' var(--text-opsz);
+    font-weight: 325;
+    .wf-inactive & {
+      font-family: var(--fonts-base-serif-display);
+      font-weight: normal;
+    }
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--h2-opsz-m);
+    font-size: $h2-size-m;
+    font-size: var(--h2-size-m);
+    line-height: $h2-lh-m;
+    line-height: var(--h2-lh-m);
+    max-width: $content-width-m;
+    max-width: var(--content-width);
+ }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--h2-opsz-l);
+    font-size: $h2-size-l;
+    font-size: var(--h2-size-l);
+    line-height: $h2-lh-l;
+    line-height: var(--h2-lh-l);
+    max-width: $content-width-l;
+    max-width: var(--content-width);
+  }
+  @supports (font-size: clamp(1rem, 2vw, 3rem)) {
+    /* responsive typography scaling bits */
+    --font-size-min-value: var(--h2-size-s-value);
+    --font-size-max-value: var(--h2-size-l-value);
+    --font-size-scaler-value: var(--h2-scaler-value);
+    font-size: var(--font-size);
+
+    --font-lh-min-value: var(--h2-lh-s);
+    --font-lh-max-value: var(--h2-lh-l);
+    --font-lh-scaler-value: var(--h2-lh-scaler-value);
+    line-height: var(--line-height); 
+  }
+}
+
+h2 + p {
+  margin-top: calc( var(--body-text-spacer) * 1 );
+}
+
+h3 {
+  --text-opsz: var(--h3-opsz-s);
+  color: $color-dark-gray;
+  color: var(--color-text);
+  font-family: $fonts-serif-static;
+  font-family: var(--fonts-serif-static);
+  font-size: $h3-size-s;
+  font-size: var(--h3-size-s);
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  font-weight: 600;
+  line-height: $h3-lh-s;
+  line-height: var(--h3-lh-s);
+  margin: 2rem 0 0 0;
+  max-width: $content-width-s;
+  max-width: var(--content-width);
+  position: relative;
+  @supports (font-variation-settings: normal) {
+    font-family: var(--fonts-serif);
+    font-variation-settings: 'opsz' var(--text-opsz);
+    font-weight: 575;
+  }
+  .wf-inactive & {
+    font-family: var(--fonts-base-serif);
+    font-weight: bold;
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--h3-opsz-m);
+    font-size: $h3-size-m;
+    font-size: var(--h3-size-m);
+    line-height: $h3-lh-m;
+    line-height: var(--h3-lh-m);
+    max-width: $content-width-m;
+    max-width: var(--content-width);
+ }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--h3-opsz-l);
+    font-size: $h3-size-l;
+    font-size: var(--h3-size-l);
+    line-height: $h3-lh-l;
+    line-height: var(--h3-lh-l);
+    max-width: $content-width-l;
+    max-width: var(--content-width);
+  }
+  @supports (font-size: clamp(1rem, 2vw, 3rem)) {
+    /* responsive typography scaling bits */
+    --font-size-min-value: var(--h3-size-s-value);
+    --font-size-max-value: var(--h3-size-l-value);
+    --font-size-scaler-value: var(--h3-scaler-value);
+    font-size: var(--font-size);
+
+    --font-lh-min-value: var(--h3-lh-s);
+    --font-lh-max-value: var(--h3-lh-l);
+    --font-lh-scaler-value: var(--h3-lh-scaler-value);
+    line-height: var(--line-height); 
+  }
+}
+
+h3 + p {
+  margin-top: calc( var(--body-text-spacer) * 1 );
+}
+
+p {
+  --text-opsz: var(--p-opsz-s);
+  color: $color-dark-gray;
+  color: var(--color-text);
+  font-size: $p-size-s;
+  font-size: var(--p-size-s);
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  line-height: $p-lh-s;
+  line-height: var(--p-lh-s);
+  margin: 0;
+  max-width: $content-width-s;
+  max-width: var(--content-width);
+  @supports (font-variation-settings: normal) {
+    font-variation-settings: 'opsz' var(--text-opsz);
+    font-weight: 385;
+    .wf-inactive & {
+      font-family: var(--fonts-base-serif);
+      font-weight: normal;
+      letter-spacing: 0.0275em;
+    }
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--p-opsz-m);
+    font-size: $p-size-m;
+    font-size: var(--p-size-m);
+    -webkit-hyphens: none;
+    hyphens: none;
+    line-height: $p-lh-m;
+    line-height: var(--p-lh-m);
+    max-width: $content-width-m;
+    max-width: var(--content-width);
+  }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--p-opsz-l);
+    font-size: $p-size-l;
+    font-size: var(--p-size-l);
+    line-height: $p-lh-l;
+    line-height: var(--p-lh-l);
+    max-width: $content-width-l;
+    max-width: var(--content-width);
+  }
+  @supports (font-size: clamp(1rem, 2vw, 3rem)) {
+    /* responsive typography scaling bits */
+    --font-size-min-value: var(--p-size-s-value);
+    --font-size-max-value: var(--p-size-l-value);
+    --font-size-scaler-value: var(--p-scaler-value);
+    font-size: var(--font-size);
+
+    --font-lh-min-value: var(--p-lh-s);
+    --font-lh-max-value: var(--p-lh-l);
+    --font-lh-scaler-value: var(--p-lh-scaler-value);
+    line-height: var(--line-height); 
+  }
+
+  + p {
+    text-indent: 2em;
+  }
+
+  aside + & {
+    margin-top: 1em;
+  }
+}
+
+aside {
+  font-family: "Literata Variable";
+  font-size: clamp(0.925rem, 2vw, 1rem);
+  font-style: italic;
+  line-height: clamp(1.45em, calc(0.5rem + 3vw), 1.55em);
+  max-width: var(--content-width);
+  margin-left: calc( (100vw - var(--content-width)) / 2 );
+  margin-right: calc( (100vw - var(--content-width)) / 2 );
+}
+
+footer {
+  font-family: "Literata Variable";
+  font-size: clamp(0.925rem, 2vw, 1rem);
+  font-style: italic;
+  line-height: clamp(1.45em, calc(0.5rem + 3vw), 1.55em);
+  max-width: var(--content-width);
+  margin-left: calc( (100vw - var(--content-width)) / 2 );
+  margin-right: calc( (100vw - var(--content-width)) / 2 );
+}
+
+strong {
+  font-weight: 600;
+  @supports (font-variation-settings: normal) {
+    font-weight: 625;
+  }
+}
+
+td {
+  --text-opsz: var(--p-opsz-s);
+  font-size: $p-size-s;
+  font-size: var(--p-size-s);
+  line-height: $p-lh-s;
+  line-height: var(--p-lh-s);
+  @supports (font-variation-settings: normal) {
+    font-variation-settings: 'opsz' var(--text-opsz);
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--p-opsz-m);
+    font-size: $p-size-m;
+    font-size: var(--p-size-m);
+    line-height: $p-lh-m;
+    line-height: var(--p-lh-m);
+  }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--p-opsz-l);
+    font-size: $p-size-l;
+    font-size: var(--p-size-l);
+    line-height: $p-lh-l;
+    line-height: var(--p-lh-l);
+  }
+}
+
+ul {
+  --text-opsz: var(--p-opsz-s);
+  color: $color-dark-gray;
+  color: var(--color-text);
+  font-size: $p-size-s;
+  font-size: var(--p-size-s);
+  line-height: $p-lh-s;
+  line-height: var(--p-lh-s);
+  margin: 0;
+  max-width: $content-width-s;
+  max-width: var(--content-width);
+  padding-left: 1.25rem;
+  @supports (font-variation-settings: normal) {
+    font-variation-settings: 'opsz' var(--text-opsz);
+  }
+  @media screen and (min-width: $bp--medium) {
+    --text-opsz: var(--p-opsz-m);
+    font-size: $p-size-m;
+    font-size: var(--p-size-m);
+    line-height: $p-lh-m;
+    line-height: var(--p-lh-m);
+    max-width: $content-width-m;
+    max-width: var(--content-width);
+  }
+  @media screen and (min-width: $bp--large) {
+    --text-opsz: var(--p-opsz-l);
+    font-size: $p-size-l;
+    font-size: var(--p-size-l);
+    line-height: $p-lh-l;
+    line-height: var(--p-lh-l);
+    max-width: $content-width-l;
+    max-width: var(--content-width);
+  }
+}
+
+a {
+  &:link {
+    color: $color-a-link;
+    color: var(--color-a-link);
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: .075em;
+    text-decoration-skip-ink: auto;
+    transition: all .2s ease; 
+}
+  
+  &:visited {
+    color: $color-a-visited;
+    color: var(--color-a-visited);
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: .075em;
+    text-decoration-skip-ink: auto;
+    transition: all .2s ease; 
+  }
+  
+  &:hover {
+    color: $color-a-hover;
+    color: var(--color-a-hover);
+    text-decoration: underline;
+  }
+  @media (pointer: coarse) {
+    &:hover {
+      color: unset;
+      text-decoration: unset;
+    }
+  }
+
+  &:focus {
+    color: $color-a-focus;
+    color: var(--color-a-focus);
+    text-decoration: underline;
+  }
+  
+  &:active {
+    color: $color-a-active;
+    color: var(--color-a-active);
+    text-decoration: underline;
+  }
+}
+
+
+/* Scope these styles to just within chapter content */
+.chapter {
+  /* Style first line of the first paragraph in the chapter */
+  > p:first-of-type,
+  hr + p {
+    &::first-line {
+      color: $color-text-accent;
+      color: var(--color-text-accent);
+      font-variant-caps: small-caps;
+      font-weight: 500;
+      @supports (font-variation-settings: normal) {
+        font-weight: 525;
+        .wf-inactive & {
+          font-weight: bold;
+          letter-spacing: -0.01em;
+        }
+      }
+    }
+  }
+
+
+  /* Section mark divider */
+  hr {
+    border: none;
+    margin-top: calc( var(--body-text-spacer) * 1 );
+    margin-bottom: calc( var(--body-text-spacer) * 1 );
+    text-align: center;
+    &:after {
+      color: $color-text;
+      color: var(--color-text);
+      content: "§";
+    }
+    --text-opsz: var(--p-opsz-s);
+    font-size: $p-size-s;
+    font-size: var(--p-size-s);
+    line-height: $p-lh-s;
+    line-height: var(--p-lh-s);
+    @supports (font-variation-settings: normal) {
+      font-variation-settings: 'opsz' var(--text-opsz);
+    }
+    @media screen and (min-width: $bp--medium) {
+      --text-opsz: var(--p-opsz-m);
+      font-size: $p-size-m;
+      font-size: var(--p-size-m);
+      line-height: $p-lh-m;
+      line-height: var(--p-lh-m);
+    }
+    @media screen and (min-width: $bp--large) {
+      --text-opsz: var(--p-opsz-l);
+      font-size: $p-size-l;
+      font-size: var(--p-size-l);
+      line-height: $p-lh-l;
+      line-height: var(--p-lh-l);
+    }
+    @supports (font-size: clamp(1rem, 2vw, 3rem)) {
+      /* responsive typography scaling bits */
+      --font-size-min-value: var(--p-size-s-value);
+      --font-size-max-value: var(--p-size-l-value);
+      --font-size-scaler-value: var(--p-scaler-value);
+      font-size: var(--font-size);
+  
+      --font-lh-min-value: var(--p-lh-s);
+      --font-lh-max-value: var(--p-lh-l);
+      --font-lh-scaler-value: var(--p-lh-scaler-value);
+      line-height: var(--line-height); 
+    }
+  }
+
+
+  /* Style the initial letter */
+  > p:first-of-type::first-letter {
+    --text-opsz: var(--h1-opsz-l);
+    color: $color-text-accent;
+    color: var(--color-text-accent);
+    float: left;
+    font-family: $fonts-serif-static-display;
+    font-family: var(--fonts-serif-static-display);
+    font-weight: normal;
+    font-size: 3.125em;
+    /* tweak vertical positioning in Chrome & Safari */
+    line-height: 0.6;
+    margin: 0;
+    padding: 0 0.025em 0 0;
+
+    /* tweak vertical positioning in Firefox */
+    padding-top: 0.175em;
+    @media screen and (min-width: $bp--large) {
+      padding-top: 0.17em;
+    }
+    @supports (font-variation-settings: normal) {
+      font-family: var(--fonts-serif);
+      font-variation-settings: 'opsz' var(--text-opsz);
+      font-weight: 325;
+      .wf-inactive & {
+        font-family: var(--fonts-base-serif-display);
+        font-weight: normal;
+      }
+    }
+  }
+}
