@@ -793,7 +793,10 @@ p {
       --font-lh-scaler-value: var(--p-lh-scaler-value);
       line-height: var(--line-height); } }
   p + p {
-    text-indent: 2em; }
+    text-indent: 1.25em; }
+    @media screen and (min-width: 60em) {
+      p + p {
+        text-indent: 2em; } }
   @media screen and (min-width: 60em) {
     blockquote + p {
       text-indent: 2em; } }
