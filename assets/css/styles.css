@@ -789,8 +789,9 @@ p {
       line-height: var(--line-height); } }
   p + p {
     text-indent: 2em; }
-  blockquote + p {
-    text-indent: 2em; }
+  @media screen and (min-width: 60em) {
+    blockquote + p {
+      text-indent: 2em; } }
   aside + p {
     margin-top: 1em; }
   p.no-indent {
@@ -814,6 +815,9 @@ strong {
   @supports (font-variation-settings: normal) {
     strong {
       font-weight: 625; } }
+
+.italic {
+  font-style: italic; }
 
 td {
   --text-opsz: var(--p-opsz-s);

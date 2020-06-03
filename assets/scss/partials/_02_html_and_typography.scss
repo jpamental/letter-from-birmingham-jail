@@ -314,7 +314,9 @@ p {
   }
 
   blockquote + & {
-    text-indent: 2em;
+    @media screen and (min-width: $bp--large) {
+      text-indent: 2em;
+    }
   }
 
   aside + & {
@@ -348,6 +350,10 @@ strong {
   @supports (font-variation-settings: normal) {
     font-weight: 625;
   }
+}
+
+.italic {
+  font-style: italic;
 }
 
 td {
