@@ -131,10 +131,10 @@
         {{ metadata.title }}
       </div>
       <div class="link-wrapper">
-				<div class="settings dd-menu">
+				{% comment %}<div class="settings dd-menu">
 					<a href="{{ '/' | url }}settings" class="dd-menu-trigger" id="settings_trigger">Settings</a>
 					{% include partials/settings.liquid %}
-				</div>
+				</div>{% endcomment %}
 			</div>
     </header>
     <main id="main_content" class="main-content">
