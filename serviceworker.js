@@ -1,4 +1,4 @@
-const version = 'V0.04';
+const version = 'V0.05';
 const staticCacheName = version + 'staticfiles';
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
@@ -34,7 +34,7 @@ addEventListener('install', installEvent => {
     .then( pagesCache => {
       return pagesCache.addAll([
         '/index.html',
-        '/about'
+        '/about/'
       ]); // end return addAll
     }) // end open then
     // Cache your files here
