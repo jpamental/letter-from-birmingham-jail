@@ -64,6 +64,7 @@ addEventListener('activate', activateEvent => {
 
 addEventListener('fetch', fetchEvent => {
   const request = fetchEvent.request;
+  if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') return;
   // When the user requests an HTML file 
   if (request.headers.get('Accept').includes('text/html')) {
     fetchEvent.respondWith(
