@@ -14,7 +14,7 @@ return gulp.src(files.scssPath)
   .pipe(sourcemaps.init()) // initialize sourcemaps first
   .pipe(sassGlob())
   .pipe(sass({
-    outputStyle: 'uncompressed'
+    outputStyle: 'compressed'
   }))
   .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
   .pipe(gulp.dest('assets/css')); // put final CSS in assets folder
