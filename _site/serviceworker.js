@@ -1,4 +1,4 @@
-const version = 'V0.01';
+const version = 'V0.02';
 const staticCacheName = version + 'staticfiles';
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
@@ -10,7 +10,7 @@ const cacheList = [
 ];
 
 addEventListener('install', installEvent => {
-  console.log('The service worker is installing...');
+  //console.log('The service worker is installing...');
   skipWaiting();
   installEvent.waitUntil(
     caches.open(staticCacheName)
@@ -42,7 +42,7 @@ addEventListener('install', installEvent => {
 }); // end addEventListener
 
 addEventListener('activate', activateEvent => {
-  console.log('The service worker is activated.');
+  //console.log('The service worker is activated.');
   activateEvent.waitUntil(
     caches.keys()
     .then( cacheNames => {
