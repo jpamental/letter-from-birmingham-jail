@@ -7,5 +7,17 @@
     </footer>
     <script src="{{ '/' | url }}assets/js/vendor/widowadjust-min.js" defer></script>
     <script src="{{ '/' | url }}assets/js/scripts.js" defer></script>
+    <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/serviceworker.js')
+        .then( function (registration) {
+          console.log('Success!', registration.scope);
+        })
+        .catch( function (error) {
+          console.error('Failure!', error);
+        });
+      }
+    </script>
+
   </body>
 </html>

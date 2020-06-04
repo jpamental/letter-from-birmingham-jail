@@ -6,7 +6,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  
+  eleventyConfig.addPassthroughCopy("manifest.json");
+  eleventyConfig.addPassthroughCopy("serviceworker.js");
+
 
   eleventyConfig.addLiquidShortcode("footnote", function(number, chapter) { 
     return `<a href="#ch${chapter}-fn${number}" id="ch${chapter}-fnref${number}" class="footnote--reference">${number}</a>`;
