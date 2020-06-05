@@ -65,8 +65,9 @@ let divContent = document.createTextNode(" ");
 pageMask.appendChild(divContent);
 pageMask.id = 'page_mask';
 pageMask.classList.add('page-mask');
-pageMask.setAttribute(role,'button');
-pageMask.setAttribute(title,'Close menu overlay');
+pageMask.setAttribute('role','button');
+pageMask.setAttribute('title','Close menu overlay');
+pageMask.setAttribute('tabindex','0');
 document.getElementsByTagName("body")[0].appendChild(pageMask);
 
 if (pageMask) {
