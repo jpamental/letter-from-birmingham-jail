@@ -12,10 +12,10 @@
 		}],
 	"theme_color" : "#ffffff",
 	"background_color" : "#ffffff",
-	"display" : "standalone",
-	"start_url" : "https://letterfromjail.com",
+	"display" : "minimal-ui",
+	"start_url" : "/",
 	"url" : "https://letterfromjail.com",
-	"lang" : "",
+	"lang" : "en",
 	"screenshots" : [],
 	"description" : "Dr. Martin Luther King Jr.'s letter to 8 white church leaders, written from a jail cell in Birmingham, Alabama in 1963.",
 	"generated" : ""

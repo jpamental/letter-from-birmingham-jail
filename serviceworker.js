@@ -1,4 +1,4 @@
-const version = 'V0.12';
+const version = 'V0.13';
 const staticCacheName = version + 'staticfiles';
 const imageCacheName = 'images';
 const pagesCacheName = 'pages';
@@ -17,6 +17,7 @@ addEventListener('install', installEvent => {
     .then( staticCache => {
       return staticCache.addAll([
         '/assets/css/styles.css',
+        '/assets/css/styles.css.map',
         '/assets/js/scripts.js',
         '/assets/js/vendor/fontfaceobserver.js',
         '/assets/js/vendor/widowadjust-min.js',
