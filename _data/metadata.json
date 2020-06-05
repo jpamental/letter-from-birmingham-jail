@@ -2,6 +2,8 @@
 {
   "title": "Letter from Birmingham Jail",
   "url": "https://letterfromjail.com/",
+	"start_url" : "/",
+  "lang": "en",
   "description": "Dr. Martin Luther King Jr.'s letter to 8 white church leaders, written from a jail cell in Birmingham, Alabama in 1963.",
   "author": {
     "name": "Jason Pamental",
