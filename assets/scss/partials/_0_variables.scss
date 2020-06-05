@@ -47,7 +47,7 @@ $color-light-gray: #f0f0f0;
 $color-blue: #14218c;
 $color-purple: #5407a2;
 $color-red: #ff4444;
-$color-warm-dark-gray: #594747;
+$color-warm-dark-gray: #413737;
 
 $color-background: $color-paper-light;
 $color-background-accent: $color-light-gray;
@@ -62,6 +62,7 @@ $color-text-accent: $color-warm-dark-gray;
 :root {
   --color-paper-light: #{$color-paper-light};
   --color-dark-gray: #{$color-dark-gray};
+  --color-warm-dark-gray: #{$color-warm-dark-gray};
   --color-light-gray: #{$color-light-gray};
   --color-blue: #{$color-blue};
   --color-purple: #{$color-purple};

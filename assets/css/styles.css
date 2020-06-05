@@ -17,6 +17,7 @@
 :root {
   --color-paper-light: #fafafd;
   --color-dark-gray: #333333;
+  --color-warm-dark-gray: #413737;
   --color-light-gray: #f0f0f0;
   --color-blue: #14218c;
   --color-purple: #5407a2;
@@ -29,7 +30,7 @@
   --color-a-hover: #ff4444;
   --color-a-focus: #ff4444;
   --color-a-active: #ff4444;
-  --color-text-accent: #594747; }
+  --color-text-accent: #413737; }
 
 /* Fonts */
 /* No web fonts specified for Sans */
@@ -935,7 +936,7 @@ a:active {
   /* Style the initial letter */ }
   .chapter > p:first-of-type::first-line,
   .chapter hr + p::first-line {
-    color: #594747;
+    color: #413737;
     color: var(--color-text-accent);
     font-variant-caps: small-caps;
     font-weight: 500; }
@@ -991,7 +992,7 @@ a:active {
         line-height: var(--line-height); } }
   .chapter > p:first-of-type::first-letter {
     --text-opsz: var(--h1-opsz-l);
-    color: #594747;
+    color: #413737;
     color: var(--color-text-accent);
     float: left;
     font-family: "Literata Display", Georgia, "Times New Roman", Times, serif;
