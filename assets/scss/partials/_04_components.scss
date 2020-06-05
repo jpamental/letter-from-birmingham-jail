@@ -19,7 +19,7 @@
 
 .page-title {
   display: block;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.5rem;
   font-weight: 600;
 }
 
@@ -421,7 +421,7 @@ blockquote {
     }
     &:before {
       content: '“';
-      margin-left: -0.55em;
+      margin-left: -0.525em;
       margin-right: 0.1em;
     }
     &:after {
@@ -511,12 +511,12 @@ body > footer {
   border-top: solid 1px rgba(0,0,0,0.15);
   color: $color-text;
   color: var(--color-text);
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   margin-top: 3rem;
   padding: 0.25rem 2vw 0.5rem 2vw;
   text-align: center;
   @media screen and (min-width: $bp--small) {
-    font-size: 0.75rem;
+    font-size: 0.825rem;
     padding: 0.25rem 2vw 0.5rem var(--margin-left);
     text-align: left;
   }
@@ -531,7 +531,6 @@ body > footer {
       font-family: $fonts-serif-static-caption;
       font-family: var(--fonts-serif-static-caption);
       font-size: 0.625rem;
-      text-decoration: none;
       @media screen and (min-width: $bp--small) {
         font-size: 0.75rem;
       }
@@ -586,15 +585,26 @@ body > footer {
 }
 
 @media (prefers-color-scheme:dark) {
-  :root {
+  html:not(.light) {
     --color-background: var(--color-dark-gray);
     --color-background-accent: var(--color-warm-dark-gray);
     --color-text: var(--color-paper-light);
-    --color-a-link: var(--color-light-gray);
-    --color-a-visited: var(--color-text);
+    --color-a-link: var(--color-light-blue);
+    --color-a-visited: var(--color-light-gray);
     --color-a-hover: #{$color-red};
     --color-a-focus: #{$color-red};
     --color-a-active: #{$color-red};
     --color-text-accent: var(--color-light-gray);
   }
+}
+.dark {
+  --color-background: var(--color-dark-gray);
+  --color-background-accent: var(--color-warm-dark-gray);
+  --color-text: var(--color-paper-light);
+  --color-a-link: var(--color-light-blue);
+  --color-a-visited: var(--color-light-gray);
+  --color-a-hover: #{$color-red};
+  --color-a-focus: #{$color-red};
+  --color-a-active: #{$color-red};
+  --color-text-accent: var(--color-light-gray);
 }

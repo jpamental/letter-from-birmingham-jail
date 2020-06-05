@@ -25,11 +25,15 @@
   			//document.documentElement.className += " swipe"; 
 
         // Check for Swipe UI preference
-				if (document.cookie.split(';').some((item) => item.includes('swipe=on'))) {
+				if (document.cookie.split(';').some((item) => item.includes('lightMode=dark'))) {
 					// set a cookie to save the setting
-					//document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
+					document.cookie = "lightMode=dark;max-age=31536000;path=/;samesite=strict";
+					document.documentElement.className += " dark";
+				} else if (document.cookie.split(';').some((item) => item.includes('lightMode=light'))) {
+					document.cookie = "lightMode=light;max-age=31536000;path=/;samesite=strict";
+					document.documentElement.className += " light";
 				} else {
-					document.getElementsByTagName("html")[0].classList.remove('swipe');
+					document.cookie = "lightMode=auto;max-age=31536000;path=/;samesite=strict";
 				}
 
         // set initial var for support of variable fonts
@@ -168,6 +172,7 @@
       <a href="#top">Top</a> | 
       <a href="/">Home</a> | 
       <a href="/about">About this project</a> | 
+      Light mode: <a href="#" id="light_mode_switch">Switch</a> &middot; <a href="#" id="light_mode_reset">Reset</a> | 
       Text copyright © 1963, Martin Luther King, Jr. All rights reserved.
     </footer>
     <script src="/assets/js/vendor/widowadjust-min.js" defer></script>

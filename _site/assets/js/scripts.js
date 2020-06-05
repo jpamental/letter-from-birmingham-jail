@@ -18,11 +18,36 @@ wt.fix({
 
 window.onload = function(){
 	pageCounter();
-	swipeCheck();
 }
 window.onresize = function(){
   pageCounter();
 }
+
+const lightModeToggle = document.getElementById('light_mode_switch');
+const lightModeReset = document.getElementById('light_mode_reset');
+
+lightModeToggle.addEventListener('click', function(e) {
+	e.preventDefault();
+	if (document.getElementsByTagName("html")[0].classList.contains('dark')) {
+		// set a cookie to expire the setting
+		document.cookie = "lightMode=light; max-age=31536000; path=/; samesite=strict";
+		document.getElementsByTagName("html")[0].classList.remove('dark');
+		document.getElementsByTagName("html")[0].classList.add('light');
+	} else {
+		// set a cookie to save the setting
+		document.cookie = "lightMode=dark; max-age=31536000; path=/; samesite=strict";
+		document.getElementsByTagName("html")[0].classList.remove('light');
+		document.getElementsByTagName("html")[0].classList.add('dark');
+	}
+	e.blur();
+});
+lightModeReset.addEventListener('click', function(e) {
+	e.preventDefault();
+	document.cookie = "lightMode=auto; max-age=31536000; path=/; samesite=strict";
+	document.getElementsByTagName("html")[0].classList.remove('dark');
+	document.getElementsByTagName("html")[0].classList.remove('light');
+	e.blur();
+});
 
 const menus = [].slice.call(document.querySelectorAll('.dd-menu'));
 const settingsMenuToggle = document.getElementById('settings_trigger');
@@ -90,25 +115,11 @@ toggles.forEach(toggle => toggle.addEventListener('click', function(e) {
 	pageMask.classList.remove('active');
 }));
 
-function swipeCheck() {
 
-	var toggleArray = document.getElementsByClassName('toggle-swipe');
 
-	if (document.getElementsByTagName("html")[0].classList.contains('swipe')) {
-		for (let i = 0; i < toggleArray.length; i++) {
-			toggleArray[i].classList.add('on');
-			toggleArray[i].classList.remove('off');
-		}
-		// set a cookie to save the setting
-		document.cookie = "swipe=on;max-age=31536000;path=/;samesite=strict";
-		pageCounter();
-	} else {
-		for (let i = 0; i < toggleArray.length; i++) {
-			toggleArray[i].classList.remove('on');
-			toggleArray[i].classList.add('off');
-		}
-		document.cookie = "swipe=on;max-age=0;path='/';samesite=strict";
-	}
+function lightModeCheck() {
+
+
 }
 
 function pageCounter() {
