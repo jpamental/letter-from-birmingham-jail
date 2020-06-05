@@ -314,3 +314,11 @@ $body-text-spacer-l: $p-size-l;
 :root {
   --page-count: 1;
 }
+
+/* Light mode */
+:root {
+  --osLightMode: light;
+  @media (prefers-color-scheme:dark) {
+    --osLightMode: dark;
+  }
+}
