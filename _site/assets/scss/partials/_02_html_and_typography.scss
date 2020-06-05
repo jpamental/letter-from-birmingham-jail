@@ -348,6 +348,8 @@ p {
 }
 
 aside {
+  color: $color-dark-gray;
+  color: var(--color-text);
   font-family: "Literata Variable";
   font-size: clamp(0.925rem, 2vw, 1rem);
   font-style: italic;
