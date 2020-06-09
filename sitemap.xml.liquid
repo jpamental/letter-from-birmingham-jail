@@ -8,7 +8,7 @@ sitemapIgnore: true
 {%- if item.data.sitemapIgnore != true %}
   <url>
     <loc>{{ metadata.url }}{{ item.url | httpUrl }}</loc>
-    <lastmod>{{ item.date | dateDisplay("toISOString") }}</lastmod>
+    <lastmod>{{ item.date | date: '%Y-%m-%d' }}</lastmod>
     <changefreq>{%- if item.data.changefreq -%}{{ item.data.changefreq }}{%- else -%}monthly{%- endif -%}</changefreq>
     <priority>{%- if item.data.priority -%}{{ item.data.priority }}{%- else -%}0.5{%- endif -%}</priority>
   </url>
