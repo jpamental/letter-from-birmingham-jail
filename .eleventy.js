@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("manifest.json");
   eleventyConfig.addPassthroughCopy("serviceworker.js");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
 
 
   eleventyConfig.addLiquidShortcode("footnote", function(number, chapter) { 
