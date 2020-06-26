@@ -25,7 +25,7 @@ window.onresize = function(){
 
 const lightModeToggle = document.getElementById('light_mode_switch');
 const lightModeReset = document.getElementById('light_mode_reset');
-const osLightMode = getComputedStyle(document.documentElement).getPropertyValue('--osLightMode');
+const osLightMode = getComputedStyle(document.documentElement).getPropertyValue('--osLightMode').trim();
 
 
 lightModeToggle.addEventListener('click', function(e) {
@@ -37,9 +37,9 @@ lightModeToggle.addEventListener('click', function(e) {
 		document.getElementsByTagName("html")[0].classList.add('light');
 	} else if (osLightMode == 'dark') {
 		// set a cookie to save the setting
-		document.cookie = "lightMode=dark; max-age=31536000; path=/; samesite=strict";
-		document.getElementsByTagName("html")[0].classList.remove('light');
-		document.getElementsByTagName("html")[0].classList.add('dark');
+		document.cookie = "lightMode=light; max-age=31536000; path=/; samesite=strict";
+		document.getElementsByTagName("html")[0].classList.remove('dark');
+		document.getElementsByTagName("html")[0].classList.add('light');
 	} else {
 		// set a cookie to save the setting
 		document.cookie = "lightMode=dark; max-age=31536000; path=/; samesite=strict";
