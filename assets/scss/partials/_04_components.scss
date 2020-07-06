@@ -595,6 +595,10 @@ body > footer {
     --color-a-focus: #{$color-red};
     --color-a-active: #{$color-red};
     --color-text-accent: var(--color-light-gray);
+    p {
+      font-weight: 350;
+      letter-spacing: 0.0015em;
+    }
   }
 }
 .dark {
@@ -607,4 +611,8 @@ body > footer {
   --color-a-focus: #{$color-red};
   --color-a-active: #{$color-red};
   --color-text-accent: var(--color-light-gray);
+  p {
+    font-weight: 350;
+    letter-spacing: 0.0015em;
+  }
 }
