@@ -433,6 +433,7 @@ blockquote {
       float: right;
       margin-left: 0;
       margin-right: 0;
+      margin-top: 0;
       padding-left: 2rem;
       width: calc(10vw + var(--margin-right));
     }
@@ -584,6 +585,11 @@ body > footer {
   }
 }
 
+.pub-date {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 @media (prefers-color-scheme:dark) {
   html:not(.light) {
     --color-background: var(--color-dark-gray);
@@ -595,6 +601,10 @@ body > footer {
     --color-a-focus: #{$color-red};
     --color-a-active: #{$color-red};
     --color-text-accent: var(--color-light-gray);
+    p {
+      font-weight: 350;
+      letter-spacing: 0.0015em;
+    }
   }
 }
 .dark {
@@ -607,4 +617,8 @@ body > footer {
   --color-a-focus: #{$color-red};
   --color-a-active: #{$color-red};
   --color-text-accent: var(--color-light-gray);
+  p {
+    font-weight: 350;
+    letter-spacing: 0.0015em;
+  }
 }
